@@ -6,3 +6,10 @@ class Note(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True)
     
+    def __str__(self):
+        self.id = id
+        self.title = title
+        self.content = content
+        
+        return (f'id = {id}\ntitle = {title}\ncontent = {content}\n')
+    
