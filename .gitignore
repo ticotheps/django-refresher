@@ -95,7 +95,7 @@ Pipfile
 
 # Visual Studio Code settings
 .vscode/
-settings.py
+settings.json
 
 # celery beat schedule file
 celerybeat-schedule
