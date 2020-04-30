@@ -4,5 +4,9 @@ from django.contrib import admin
 #   at http://localhost:8000/admin
 from .models import Note
 
+# Allows read-only fields to show up in admin portal
+class NoteAdmin(admin.ModelAdmin):
+    readonly_fields=('created_at', 'last_modified')
+
 # Registers the 'Note' model with the admin portal
-admin.site.register(Note)
+admin.site.register(Note, NoteAdmin)
