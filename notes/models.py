@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from uuid import uuid4
 
 class Note(models.Model):
@@ -10,3 +11,7 @@ class Note(models.Model):
         
     def __repr__(self):
         return(f"\nid = {self.id}\ntitle = {self.title}\ncontent = {self.content}")
+    
+# Inherits attributes from 'Note' class
+class PersonalNote(Note):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
